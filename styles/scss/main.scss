@@ -40,6 +40,163 @@ a {
   margin: 0 auto;
 }
 
+// component
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 20px;
+  transition: all .2s;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: -1;
+    transition: all .3s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba($color: $black, $alpha: .2);
+
+    &::after {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba($color: $black, $alpha: .3);
+  }
+
+  &--primary {
+    background-image: linear-gradient(to top right, $lightBlue, $blue);
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+
+    &::after {
+      background-image: linear-gradient(to top right, $lightBlue, $blue);
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+
+    &::after {
+      background-color: $white;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+
+  &--main {
+    justify-content: space-between;
+
+    & > li {
+      position: relative;
+      border-radius: 20px;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+
+      // &:hover::after {
+      //   position: absolute;
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   border: 1px solid $blue;
+      //   border-radius: 20px;
+      // }
+
+      a {
+        padding: 5px 20px;
+      }
+
+      &.active {
+        // background-image: linear-gradient(to top right, $lightBlue, $blue);
+        color: $blue;
+        border: 2px solid $blue;
+
+        &:hover {
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &__dropdown {
+      // height: 50px;
+
+
+      &__item {
+        // background-image: linear-gradient(to top right, $lightBlue, $blue);
+        background-color: $blue;
+        color: $white;
+        position: absolute;
+        top: -1000px;
+
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px;
+        padding: 1rem 0;
+
+        // overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        // justify-content: stretch;
+        align-items: center;
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: -10px;
+          width: 30px;
+          height: 10px;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          background-color: $blue;
+        }
+
+
+        & > li {
+          overflow: hidden;
+          padding: 5px 0;
+          align-self: stretch;
+          text-align: center;
+
+          &:hover {
+            background-color: $lightBlue;
+          }
+        }
+      }
+
+      &:hover > &__item {
+
+          top: 40px;
+      }
+
+    }
+  }
+}
+
 // layout
 .header {
   height: 100px;
@@ -161,8 +318,7 @@ a {
     }
 
     &__cta {
-      padding: 0.75rem 2rem;
-      border-radius: 20px;
+
       margin-bottom: 1rem;
     }
   }
@@ -256,118 +412,58 @@ a {
   }
 }
 
-// component
-.btn {
-  // padding: 1rem 2rem;
-  // border-radius: 30px;
+.cta {
+  background-color: $blue;
+  padding: 2rem 0;
 
-  &--primary {
-    background-image: linear-gradient(to top right, $lightBlue, $blue);
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
     color: $white;
+    margin-right: 2rem;
+    letter-spacing: .2rem;
+    font-weight: normal;
+  }
 
-    &:hover {
-      color: $white;
+  &__cta {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    h3 {
+      color: $blue;
+      font-weight: normal;
     }
   }
 }
 
-.nav {
-  display: flex;
+.supervisor {
 
-  &--main {
-    justify-content: space-between;
+  background-color: $lightGrey;
+  padding: 2rem 0;
 
-    & > li {
-      position: relative;
-      border-radius: 20px;
-      cursor: pointer;
-
-      display: flex;
-      justify-content: stretch;
-      align-items: center;
-
-      // &:hover::after {
-      //   position: absolute;
-      //   content: "";
-      //   width: 100%;
-      //   height: 100%;
-      //   border: 1px solid $blue;
-      //   border-radius: 20px;
-      // }
-
-      a {
-        padding: 5px 20px;
-      }
-
-      &.active {
-        background-image: linear-gradient(to top right, $lightBlue, $blue);
-        color: $white;
-
-        &:hover {
-          color: $white;
-
-          &::after {
-            display: none;
-          }
-        }
-      }
-
-      &:hover {
-        color: $blue;
-      }
-    }
-
-    &__dropdown {
-      // height: 50px;
-
-
-      &__item {
-        // background-image: linear-gradient(to top right, $lightBlue, $blue);
-        background-color: $blue;
-        color: $white;
-        position: absolute;
-        top: -1000px;
-
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 20px;
-        padding: 1rem 0;
-
-        // overflow: hidden;
-
-        display: flex;
-        flex-direction: column;
-        // justify-content: stretch;
-        align-items: center;
-
-        &::before {
-          position: absolute;
-          content: '';
-          top: -20px;
-          width: 30%;
-          height: 20px;
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-          background-color: $blue;
-        }
-
-
-        & > li {
-          overflow: hidden;
-          padding: 5px 0;
-          align-self: stretch;
-          text-align: center;
-
-          &:hover {
-            background-color: $lightBlue;
-          }
-        }
-      }
-
-      &:hover > &__item {
-
-          top: 55px;
-      }
-
-    }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  h3 {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &__auth {
+    flex-basis: 20%;
+  }
+
 }
