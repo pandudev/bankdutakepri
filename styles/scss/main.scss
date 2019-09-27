@@ -1,0 +1,315 @@
+// variable
+$blue: #0673ce;
+$lightBlue: #3e9ff3;
+$white: #ffffff;
+$black: #000000;
+$grey: #404040;
+$lightGrey: #f9f9f9;
+
+// reset
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $grey;
+  background-color: $white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+// global
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// layout
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    flex-basis: 35%;
+
+    & > img {
+      width: 250px;
+      height: auto;
+    }
+  }
+
+  &__nav {
+    flex-grow: 1;
+  }
+}
+
+.hero {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__intro {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__heading {
+      font-weight: normal;
+      margin-bottom: 2rem;
+
+      span {
+        display: block;
+        font-weight: bold;
+      }
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+    }
+
+    &__cta {
+      padding: 1rem 2rem;
+      border-radius: 30px;
+    }
+  }
+
+  &__image {
+    flex-basis: 30%;
+    flex-grow: 0;
+
+    & > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  padding: 3rem 0;
+
+  &__title {
+    font-weight: normal;
+    margin-bottom: 2rem;
+    color: $white;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__card {
+    background-color: $white;
+    flex-basis: 32%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon {
+      padding: 2rem 0;
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+    }
+
+    &__text {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    &__cta {
+      padding: 0.75rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.info {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 400px;
+      height: 100%;
+      background-color: $blue;
+      left: -20%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    z-index: +1;
+
+    &__thumbnail {
+      flex-basis: 40%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    &__content {
+      flex-basis: 55%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: 2rem;
+
+      &__heading {
+        margin-bottom: 1rem;
+      }
+
+      &__text {
+        text-align: justify;
+        flex-grow: 1;
+      }
+
+      &__pager {
+        padding-bottom: 2rem;
+        display: flex;
+        align-self: flex-end;
+
+        div {
+          width: 30px;
+          height: 30px;
+          background-color: $white;
+          border: 1px solid $lightBlue;
+          color: $blue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          &.active {
+            color: $white;
+            background-color: $blue;
+          }
+
+          &:not(:first-of-type) {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// component
+.btn {
+  // padding: 1rem 2rem;
+  // border-radius: 30px;
+
+  &--primary {
+    background-image: linear-gradient(to top right, $lightBlue, $blue);
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+
+  &--main {
+    justify-content: space-between;
+
+    li {
+      position: relative;
+      border-radius: 20px;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+
+      &:hover::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border: 1px solid $blue;
+      }
+
+      a {
+        padding: 5px 20px;
+      }
+
+      &.active {
+        background-image: linear-gradient(to top right, $lightBlue, $blue);
+        color: $white;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+}
