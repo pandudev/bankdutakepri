@@ -1,6 +1,6 @@
 // variable
 $blue: #0673ce;
-$lightBlue: #3e9ff3;
+$lightBlue: #2699fb;
 $white: #ffffff;
 $black: #000000;
 $grey: #404040;
@@ -89,10 +89,16 @@ a {
 
   &--secondary {
     background-color: $white;
+    color: $blue;
 
     &::after {
       background-color: $white;
     }
+  }
+
+  &--accent {
+    border: 2px solid $white;
+    color: $white;
   }
 }
 
@@ -243,7 +249,7 @@ a {
   }
 
   &__intro {
-    flex-basis: 60%;
+    flex-basis: 55%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -269,7 +275,7 @@ a {
   }
 
   &__image {
-    flex-basis: 30%;
+    flex-basis: 40%;
     flex-grow: 0;
 
     & > img {
@@ -428,7 +434,7 @@ a {
 }
 
 .cta {
-  background-color: $lightGrey;
+  background-color: $lightBlue;
   padding: 2rem 0;
 
   &__wrapper {
@@ -438,7 +444,7 @@ a {
   }
 
   &__text {
-    color: $blue;
+    color: $white;
     margin-right: 2rem;
     letter-spacing: 0.2rem;
     font-weight: normal;
@@ -461,26 +467,6 @@ a {
   }
 }
 
-.supervisor {
-  // background-color: $lightGrey;
-  padding: 2rem 0;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  h3 {
-    flex-grow: 1;
-    // text-align: center;
-  }
-
-  &__auth {
-    flex-basis: 20%;
-  }
-}
-
 .footer {
   background-color: $blue;
   padding: 2rem 0;
@@ -494,6 +480,25 @@ a {
 
   &__profile {
     flex-basis: 40%;
+
+    p:last-of-type {
+      margin-top: 1rem;
+    }
+
+    &__supervisor {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+
+      img {
+        height: 30px;
+        width: auto;
+
+        &:not(:last-of-type) {
+          margin-right: 1rem;
+        }
+      }
+    }
   }
 
   &__nav {
@@ -511,5 +516,106 @@ a {
     width: 100%;
     text-align: center;
     padding-top: 1rem;
+  }
+}
+
+// pages
+.product {
+  &-hero {
+    height: calc(100vh - 100px);
+    position: relative;
+    display: flex;
+    align-items: stretch;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__intro {
+      flex-basis: 60%;
+      display: flex;
+      flex-direction: column;
+
+      &__heading {
+        // font-weight: normal;
+        margin-bottom: 2rem;
+      }
+
+      &__text {
+        margin-bottom: 2rem;
+      }
+
+      &__cta {
+        align-self: flex-start;
+      }
+    }
+
+    &__thumbnail {
+      position: absolute;
+      right: 0;
+      height: 450px;
+      z-index: +1;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: rgba($color: $blue, $alpha: 0.12);
+        transform: translate(-20px, 20px);
+        z-index: -1;
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  &-menu {
+    padding: 2rem 0;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      flex-basis: 32%;
+      flex-shrink: 0;
+      flex-grow: 0;
+      background-color: $lightBlue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      &__thumbnail {
+        background-color: red;
+        object-fit: cover;
+        object-position: center;
+        // overflow: hidden;
+        height: 300px;
+
+        img {
+          // height: 100%;
+          width: 100%;
+        }
+      }
+
+      &__name {
+        color: $white;
+        padding: 1rem 0;
+      }
+
+      &__button {
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
