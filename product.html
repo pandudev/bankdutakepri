@@ -1,236 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bank Duta Kepri</title>
-    <link rel="stylesheet" href="styles/css/main.min.css" />
-  </head>
 
-  <body>
-    <header id="header" class="header">
-      <div class="header__wrapper container">
-        <div class="header__logo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Bank Duta Kepri</title>
+  <link rel="stylesheet" href="styles/css/main.min.css" />
+</head>
+
+<body>
+
+  <header id="header" class="header">
+    <div class="header__wrapper container">
+      <div class="header__logo">
+        <a href="index.html">
           <img src="sources/images/logo.png" alt="Bank Duta Kepri Logo" />
-        </div>
-        <nav class="header__nav">
-          <ul class="nav nav--main">
-            <li class="active"><a href="#">Beranda</a></li>
-            <li class="nav--main__dropdown">
-              <a href="#">Produk</a>
-              <ul class="nav--main__dropdown__item">
-                <li><a href="#">Kredit</a></li>
-                <li><a href="#">Tabungan</a></li>
-                <li><a href="#">Deposito</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Publikasi</a></li>
-            <li><a href="#">Lelang</a></li>
-            <li><a href="#">Tentang Kami</a></li>
-            <li><a href="#">Hubungi Kami</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div id="product-hero" class="product-hero">
-      <div class="product-hero__wrapper container">
-        <div class="product-hero__intro">
-          <h1 class="product-hero__intro__heading">Kredit</h1>
-          <p class="product-hero__intro__text">
-            BPR Duta Kepri menyediakan beragam jenis Produk Kredit untuk
-            mewujudkan impian Anda, Keluarga Anda, dan juga untuk para pebisnis
-            dan pengusaha. Proses yang cepat dan persyaratan yang mudah
-            menunjukkan komitmen BPR Duta Kepri untuk mendukung segala jenis
-            kebutuhan dan usaha anda
-          </p>
-          <a href="#" class="btn btn--primary product-hero__intro__cta"
-            >Lihat Produk</a
-          >
-        </div>
-        <div class="product-hero__thumbnail">
-          <img src="sources/images/kredit-thumbnail.png" alt="Kredit" />
-        </div>
-      </div>
-    </div>
-    <div id="product-menu" class="product-menu">
-      <div class="product-menu__wrapper container">
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/kpr-thumbnail.png" alt="KPR" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Pemilikan Rumah</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/kmg-thumbnail.png" alt="KMG" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Multi Guna</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/kpm-thumbnail.png" alt="KPM" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Pemilikan Mobil</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/ki-thumbnail.png" alt="KI" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Investasi</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/kmk-thumbnail.png" alt="KMK" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Modal Kerja</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-        <div class="product-menu__item">
-          <div class="product-menu__item__thumbnail">
-            <img src="sources/images/kp-thumbnail.png" alt="KP" />
-          </div>
-          <h3 class="product-menu__item__name">Kredit Pegawai</h3>
-          <a href="#" class="btn btn--accent product-menu__item__button"
-            >Baca Selengkapnya</a
-          >
-        </div>
-      </div>
-    </div>
-    <div id="cta" class="cta">
-      <div class="cta__wrapper container">
-        <h1 class="cta__text">Butuh informasi lebih lanjut?</h1>
-        <a href="#" class="btn btn--secondary cta__cta">
-          <span class="cta__cta__icon">
-            <img src="sources/images/phone-icon.png" alt="Hubuni Kami" />
-          </span>
-          <h3>Hubungi Kami</h3>
         </a>
       </div>
+      <nav class="header__nav">
+        <ul class="nav nav--main">
+          <li><a href="#">Beranda</a></li>
+          <li class="nav--main__dropdown active">
+            <a href="#">Produk</a>
+            <ul class="nav--main__dropdown__item">
+              <li><a href="#">Kredit</a></li>
+              <li><a href="#">Tabungan</a></li>
+              <li><a href="#">Deposito</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Publikasi</a></li>
+          <li><a href="#">Lelang</a></li>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="services" class="services">
-      <h1 class="services__title">Produk & Layanan</h1>
-      <div class="services__wrapper container">
-        <div class="services__card">
-          <div class="services__card__icon">
-            <img src="sources/images/kredit-icon.png" alt="Kredit" />
-          </div>
-          <h1 class="services__card__title">Kredit</h1>
-          <p class="services__card__text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
-            consequat.
-          </p>
-          <a href="#" class="btn btn--primary services__card__cta"
-            >Baca Selanjutnya</a
-          >
-        </div>
-        <div class="services__card">
-          <div class="services__card__icon">
-            <img src="sources/images/tabungan-icon.png" alt="Tabungan" />
-          </div>
-          <h1 class="services__card__title">Tabungan</h1>
-          <p class="services__card__text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
-            consequat.
-          </p>
-          <a href="#" class="btn btn--primary services__card__cta"
-            >Baca Selanjutnya</a
-          >
-        </div>
-        <div class="services__card">
-          <div class="services__card__icon">
-            <img src="sources/images/deposito-icon.png" alt="Deposito" />
-          </div>
-          <h1 class="services__card__title">Deposito</h1>
-          <p class="services__card__text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
-            consequat.
-          </p>
-          <a href="#" class="btn btn--primary services__card__cta"
-            >Baca Selanjutnya</a
-          >
-        </div>
-      </div>
-    </div>
+  </header>
 
-    <footer id="footer" class="footer">
-      <div class="footer__wrapper container">
-        <div class="footer__profile">
-          <h4>BPR DUTA KEPRI</h4>
-          <p>Jl. Kemboja No. 21</p>
-          <p>Tanjungpinang, Kepulauan Riau</p>
-          <p>Telp: 0771-316888 (Hunting)</p>
-          <p>Fax: 0771-316800</p>
-          <a href="mailto:bprdutakepri@yahoo.co.id"
-            >Email: bptdutakepri@yahoo.co.id</a
-          >
-          <p>Terdaftar dan diawasi oleh :</p>
-          <div class="footer__profile__supervisor">
-            <img src="sources/images/ojk-logo.png" alt="OJK" />
-            <img src="sources/images/lps-logo.png" alt="LPS" />
-          </div>
+  <div id="page-hero" class="page-hero">
+    <div class="page-hero__wrapper container">
+      <div class="page-hero__intro">
+        <h1 class="page-hero__intro__heading">Kredit</h1>
+        <p class="page-hero__intro__text">
+          BPR Duta Kepri menyediakan beragam jenis Produk Kredit untuk
+          mewujudkan impian Anda, Keluarga Anda, dan juga untuk para pebisnis
+          dan pengusaha. Proses yang cepat dan persyaratan yang mudah
+          menunjukkan komitmen BPR Duta Kepri untuk mendukung segala jenis
+          kebutuhan dan usaha anda
+        </p>
+        <a href="#product-menu" class="btn btn--primary page-hero__intro__cta">Lihat Produk</a>
+      </div>
+      <div class="page-hero__thumbnail">
+        <img src="sources/images/kredit-thumbnail.png" alt="Kredit" />
+      </div>
+    </div>
+  </div>
+
+  <div id="product-menu" class="product-menu">
+    <!-- <h1>Beragam Jenis Kredit <span>Sesuai Kebutuhan Anda</span></h1> -->
+    <div class="product-menu__wrapper container">
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/kpr-thumbnail.png" alt="KPR" />
         </div>
-        <div class="footer__nav">
-          <ul class="nav nav--footer">
-            <li>
-              <h4>Tabungan</h4>
-              <ul>
-                <li>
-                  <a href="">Tabungan Duta Prima</a>
-                </li>
-                <li>
-                  <a href="">TabunganKu</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h4>Deposito</h4>
-              <ul>
-                <li>
-                  <a href="#">Deposio Kharisma</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h4>Kredit</h4>
-              <ul>
-                <li><a href="#">Kredit Multi Guna</a></li>
-                <li><a href="#">Kredit Kendaraan Bermotor</a></li>
-                <li><a href="#">Kredit Pemilikan Rumah</a></li>
-                <li><a href="#">Kredit Investasi</a></li>
-                <li><a href="#">Kredit Modal Kerja</a></li>
-                <li><a href="#">Kredit Pegawai</a></li>
-              </ul>
-            </li>
-          </ul>
+        <h3 class="product-menu__item__name">Kredit Pemilikan Rumah</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/kmg-thumbnail.png" alt="KMG" />
         </div>
-        <div class="footer__copyright">
-          <p>Copyright 2019 &copy; BPR Duta Kepri</p>
+        <h3 class="product-menu__item__name">Kredit Multi Guna</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/kpm-thumbnail.png" alt="KPM" />
+        </div>
+        <h3 class="product-menu__item__name">Kredit Pemilikan Mobil</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/ki-thumbnail.png" alt="KI" />
+        </div>
+        <h3 class="product-menu__item__name">Kredit Investasi</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/kmk-thumbnail.png" alt="KMK" />
+        </div>
+        <h3 class="product-menu__item__name">Kredit Modal Kerja</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+      <div class="product-menu__item">
+        <div class="product-menu__item__thumbnail">
+          <img src="sources/images/kp-thumbnail.png" alt="KP" />
+        </div>
+        <h3 class="product-menu__item__name">Kredit Pegawai</h3>
+        <a href="#" class="btn btn--accent product-menu__item__button">Baca Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services">
+    <h1 class="services__title">Produk & Layanan</h1>
+    <div class="services__wrapper container">
+      <div class="services__card">
+        <div class="services__card__icon">
+          <img src="sources/images/kredit-icon.png" alt="Kredit" />
+        </div>
+        <h1 class="services__card__title">Kredit</h1>
+        <p class="services__card__text">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
+          consequat.
+        </p>
+        <a href="#" class="btn btn--primary services__card__cta">Baca Selanjutnya</a>
+      </div>
+      <div class="services__card">
+        <div class="services__card__icon">
+          <img src="sources/images/tabungan-icon.png" alt="Tabungan" />
+        </div>
+        <h1 class="services__card__title">Tabungan</h1>
+        <p class="services__card__text">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
+          consequat.
+        </p>
+        <a href="#" class="btn btn--primary services__card__cta">Baca Selanjutnya</a>
+      </div>
+      <div class="services__card">
+        <div class="services__card__icon">
+          <img src="sources/images/deposito-icon.png" alt="Deposito" />
+        </div>
+        <h1 class="services__card__title">Deposito</h1>
+        <p class="services__card__text">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+          ullamcorper suscipit lobortis nisl u t aliquip ex ea commodo
+          consequat.
+        </p>
+        <a href="#" class="btn btn--primary services__card__cta">Baca Selanjutnya</a>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer" class="footer">
+    <div class="footer__wrapper container">
+      <div class="footer__profile">
+        <h4>BPR DUTA KEPRI</h4>
+        <p>Jl. Kemboja No. 21</p>
+        <p>Tanjungpinang, Kepulauan Riau</p>
+        <p>Telp: 0771-316888 (Hunting)</p>
+        <p>Fax: 0771-316800</p>
+        <a href="mailto:bprdutakepri@yahoo.co.id">Email: bptdutakepri@yahoo.co.id</a>
+        <p>Terdaftar dan diawasi oleh :</p>
+        <div class="footer__profile__supervisor">
+          <img src="sources/images/ojk-logo.png" alt="OJK" />
+          <img src="sources/images/lps-logo.png" alt="LPS" />
         </div>
       </div>
-    </footer>
-  </body>
+      <div class="footer__nav">
+        <ul class="nav nav--footer">
+          <li>
+            <h4>Tabungan</h4>
+            <ul>
+              <li>
+                <a href="">Tabungan Duta Prima</a>
+              </li>
+              <li>
+                <a href="">TabunganKu</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h4>Deposito</h4>
+            <ul>
+              <li>
+                <a href="#">Deposio Kharisma</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h4>Kredit</h4>
+            <ul>
+              <li><a href="#">Kredit Multi Guna</a></li>
+              <li><a href="#">Kredit Kendaraan Bermotor</a></li>
+              <li><a href="#">Kredit Pemilikan Rumah</a></li>
+              <li><a href="#">Kredit Investasi</a></li>
+              <li><a href="#">Kredit Modal Kerja</a></li>
+              <li><a href="#">Kredit Pegawai</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__copyright">
+        <p>Copyright 2019 &copy; BPR Duta Kepri</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>

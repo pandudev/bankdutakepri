@@ -1,0 +1,9 @@
+$(document).ready(function () {
+  $('.product-detail-content__information__menu ul li a').click(function (event) {
+    event.preventDefault();
+    $(this).parent().addClass('active');
+    $(this).parent().siblings().removeClass('active');
+    $($(this).data('target')).addClass('show');
+    $($(this).data('target')).siblings().removeClass('show');
+  })
+});
