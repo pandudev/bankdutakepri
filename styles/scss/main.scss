@@ -7,6 +7,12 @@ $grey: #404040;
 // $lightGrey: #f9f9f9;
 $lightGrey: #E1EEF9;
 
+// breakpoints
+$sm:576px;
+$md:768px;
+$lg: 992px;
+$xl: 1200px;
+
 // reset
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap");
 
@@ -17,6 +23,10 @@ body {
   line-height: 1.6;
   color: $grey;
   background-color: $white;
+
+  @media (max-width: $sm) {
+    font-size: 14px;
+  }
 }
 
 * {
@@ -73,6 +83,11 @@ table {
 
     tr {
 
+      &:hover {
+        background-color: $lightBlue;
+        color: $white;
+      }
+
       &:not(:last-of-type) {
         border-bottom: 1px solid rgba($color: $blue, $alpha: 0.2);
       }
@@ -86,10 +101,61 @@ table {
   }
 }
 
+.form {
+  width: 100%;
+  padding: 1rem;
+
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+
+    &:not(:last-of-type) {
+      margin-bottom: .25rem;
+    }
+
+    & > label {
+      flex: 0 0 25%;
+    }
+
+    & > input,
+    & > textarea {
+      flex-grow: 1;
+    }
+
+    & > button {
+      margin-top: 1rem;
+      margin-left: auto;
+    }
+  }
+}
+
+input, textarea {
+  padding: .5rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  outline: none;
+  background: transparent;
+
+}
+
+
 // global
 .container {
   width: 80%;
   margin: 0 auto;
+
+   @media (max-width: $sm) {
+      width: 85%;
+    }
 }
 
 // component
@@ -98,6 +164,7 @@ table {
   border-radius: 20px;
   transition: all 0.2s;
   position: relative;
+  text-align: center;
 
   &::after {
     position: absolute;
@@ -171,6 +238,16 @@ table {
     }
 
   }
+
+  &--cta {
+    display: flex;
+
+     &__icon {
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .nav {
@@ -183,6 +260,7 @@ table {
       position: relative;
       border-radius: 20px;
       cursor: pointer;
+      border: 2px solid $white;
 
       display: flex;
       justify-content: stretch;
@@ -281,6 +359,10 @@ table {
         visibility: visible;
       }
     }
+
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
 }
 
@@ -299,6 +381,12 @@ table {
   &__logo {
     flex-basis: 30%;
 
+    @media (max-width: $sm) {
+      flex: 0 0 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     img {
       width: 250px;
       height: auto;
@@ -316,10 +404,21 @@ table {
   display: flex;
   align-items: center;
 
+  @media (max-width: $sm) {
+      align-items: stretch;
+      height: 100%;
+      padding: 2rem 0;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
 
   &__intro {
@@ -328,9 +427,18 @@ table {
     flex-direction: column;
     align-items: flex-start;
 
+    @media (max-width: $sm) {
+      order: 2;
+      align-items: center;
+    }
+
     &__heading {
       font-weight: normal;
       margin-bottom: 2rem;
+
+       @media (max-width: $sm) {
+         text-align: center;
+      }
 
       span {
         display: block;
@@ -345,8 +453,12 @@ table {
     &__cta {
       padding: 1rem 2rem;
       border-radius: 30px;
-      // align-self: flex-end;
-      // margin-top: 4rem;
+
+      // @media (max-width: $sm) {
+      //   align-self: stretch;
+      // }
+
+
     }
   }
 
@@ -354,9 +466,17 @@ table {
     flex-basis: 40%;
     flex-grow: 0;
 
+    @media (max-width: $sm) {
+      order: 1;
+    }
+
     & > img {
       width: 100%;
       height: auto;
+
+      @media (max-width: $sm) {
+        width: 300px;
+     }
     }
   }
 }
@@ -375,19 +495,34 @@ table {
 
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
   }
 
   &__card {
     background-color: $white;
-    flex-basis: 32%;
+    flex: 0 0 32%;
     padding: 1rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+
+    @media (max-width: $sm) {
+      margin-bottom: 1rem;
+    }
+
+
+    &:not(:nth-child(3n+1)) {
+        margin-left: calc((100% - (32% * 3)) / 2);
+
+        @media (max-width: $sm) {
+          margin-left: 0;
+        }
+      }
 
     &__icon {
       padding: 2rem 0;
@@ -409,6 +544,50 @@ table {
 
     &__cta {
       margin-bottom: 1rem;
+
+    //   @media (max-width: $sm) {
+    //   align-self: stretch;
+    // }
+    }
+  }
+}
+
+.cta {
+  background-color: $lightBlue;
+  padding: 2rem 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    color: $white;
+    margin-right: 2rem;
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+
+    @media (max-width: $sm) {
+      margin-right: 0;
+      letter-spacing: unset;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+
+
+
+    h3 {
+      // color: $blue;
+      font-weight: normal;
     }
   }
 }
@@ -510,40 +689,6 @@ table {
   }
 }
 
-.cta {
-  background-color: $lightBlue;
-  padding: 2rem 0;
-
-  &__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__text {
-    color: $white;
-    margin-right: 2rem;
-    letter-spacing: 0.2rem;
-    font-weight: normal;
-  }
-
-  &__cta {
-    display: flex;
-    align-items: center;
-
-    &__icon {
-      margin-right: 1rem;
-      display: flex;
-      align-items: center;
-    }
-
-    h3 {
-      // color: $blue;
-      font-weight: normal;
-    }
-  }
-}
-
 .footer {
   background-color: $blue;
   padding: 2rem 0;
@@ -595,8 +740,11 @@ table {
     margin-top: 2rem;
     border-top: 2px solid rgba($color: $white, $alpha: 0.5);
     width: 100%;
-    text-align: center;
     padding-top: 1rem;
+
+    p {
+      text-align: center;
+    }
   }
 }
 
@@ -633,22 +781,22 @@ table {
 
     &__wrapper {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       z-index: +1;
     }
 
     &__item {
-      margin: 0 auto;
-      flex-basis: 32%;
-      flex-shrink: 0;
-      flex-grow: 0;
+      flex: 0 0 32%;
       background-color: $lightBlue;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+      &:not(:nth-child(3n+1)) {
+        margin-left: calc((100% - (32% * 3)) / 2);
+      }
 
 
       &__thumbnail {
@@ -847,6 +995,7 @@ table {
       position: absolute;
       right: 0;
       height: 450px;
+      width: 450px;
       z-index: +1;
       align-self: center;
 
@@ -863,8 +1012,10 @@ table {
       }
 
       img {
+        object-fit: cover;
+        object-position: center center;
         height: 100%;
-        width: auto;
+        width: 100%;
       }
     }
   }
@@ -921,32 +1072,46 @@ table {
 .lelang {
 
   background-color: $lightGrey;
+  display: flex;
+  flex-direction: column;
 
   &__banner {
     background-image: url("/sources/images/lelang-banner.png");
   }
 
   &__list {
-    padding: 2rem;
+    padding: 2rem 0;
     display: flex;
+    // justify-content: flex-start;
+    flex-wrap: wrap;
 
 
     &__item {
-      flex-basis: 32%;
+      // margin: 0 auto;
+      flex: 0 0 32%;
+      border-radius: 20px;
+      overflow: hidden;
       background-color: $blue;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      margin-bottom: 2rem;
 
-      &__thumnail {
+      &:not(:nth-child(3n+1)) {
+        margin-left: calc((100% - (32% * 3)) / 2);
+      }
+
+      &__thumbnail {
+
+        height: 300px;
+        overflow: hidden;
 
         & > img {
-          width: 100%;
-          height: auto;
+          object-fit: cover;
         }
       }
 
       &__content {
 
-        h3 {
+        h4 {
           padding: 1rem;
           color: $white;
         }
@@ -954,9 +1119,173 @@ table {
         &__specs {
           padding: 1rem;
           background-color: $white;
+          display: flex;
+          flex-direction: column;
+
+          & > div {
+            display: flex;
+
+            & > p {
+              flex-basis: 40%;
+              margin: 0;
+
+              &:nth-child(even) {
+                flex-grow: 1;
+
+                &::before {
+                  content: ':';
+                  margin-right: .75rem;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 
+  &__cta {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+
+}
+
+.about {
+  padding: 2rem 0;
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__history {
+    margin-bottom: 2rem;
+  }
+
+  &__profile {
+    margin-bottom: 2rem;
+
+    &__wrapper {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &__thumbnail {
+      position: absolute;
+      left: 0;
+      width: 450px;
+      height: auto;
+      flex: 0 0 450px;
+      z-index: 10;
+
+      &::after  {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: rgba($color: $blue, $alpha: 0.12);
+        transform: translate(20px, 20px);
+        z-index: -1;
+      }
+
+      & > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__text {
+      padding-left: 350px;
+      // flex: 0 0 calc(100% - 450px - 2rem);
+    }
+  }
+
+  &__logo {
+    margin-bottom: 2rem;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__thumbnail {
+      flex: 0 0 350px;
+      display: flex;
+      justify-content: center;
+
+      & > img {
+        width: 200px;
+        height: auto;
+      }
+    }
+
+    &__text {
+      flex: 0 0 calc(100% - 200px - 150px);
+    }
+  }
+}
+
+.contact {
+  background-color: $lightBlue;
+  color: $white;
+  padding: 2rem 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    // align-items: center;
+  }
+
+  &__form {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $white;
+    color: $black;
+    // height: 600px;
+    padding: 1rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    & > p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  &__company {
+    flex: 0 0 40%;
+
+    & > p {
+      margin-bottom: 2rem;
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      img {
+        margin-right: 1rem;
+        width: 20px;
+        height: auto;
+      }
+
+      & > a{
+        display: flex;
+        align-items: center;
+      }
+    }
+
+  }
 }
