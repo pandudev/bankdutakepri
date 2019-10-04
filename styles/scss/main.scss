@@ -62,13 +62,18 @@ p {
   }
 }
 
-table {
+.table {
   border-collapse: collapse;
   width: 100%;
   background-color: $lightGrey;
   color: $blue;
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 1rem;
+
+  &__responsive {
+    overflow-x: auto;
+  }
 
   thead {
     background-color: $blue;
@@ -360,10 +365,15 @@ button {
       }
     }
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       display: none;
     }
+
+
+
+
   }
+
 }
 
 // layout
@@ -372,19 +382,34 @@ button {
   display: flex;
   align-items: center;
 
+  @media (max-width: $lg) {
+    height: 100%;
+    padding: 1rem;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $lg) {
+     flex-direction: column;
+     align-items: center;
+    }
+
   }
 
   &__logo {
     flex-basis: 30%;
 
-    @media (max-width: $sm) {
-      flex: 0 0 100%;
+    @media (max-width: $md) {
+      flex: 1 0 100%;
       display: flex;
       justify-content: center;
+    }
+
+    @media (max-width: $lg) {
+      margin-bottom: 1rem;
     }
 
     img {
@@ -396,6 +421,7 @@ button {
 
   &__nav {
     flex-grow: 1;
+    text-align: center;
   }
 }
 
@@ -404,7 +430,7 @@ button {
   display: flex;
   align-items: center;
 
-  @media (max-width: $sm) {
+  @media (max-width: $md) {
       align-items: stretch;
       height: 100%;
       padding: 2rem 0;
@@ -415,7 +441,7 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       flex-direction: column;
       justify-content: flex-start;
     }
@@ -427,7 +453,7 @@ button {
     flex-direction: column;
     align-items: flex-start;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       order: 2;
       align-items: center;
     }
@@ -436,7 +462,7 @@ button {
       font-weight: normal;
       margin-bottom: 2rem;
 
-       @media (max-width: $sm) {
+       @media (max-width: $md) {
          text-align: center;
       }
 
@@ -466,7 +492,7 @@ button {
     flex-basis: 40%;
     flex-grow: 0;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       order: 1;
     }
 
@@ -474,7 +500,7 @@ button {
       width: 100%;
       height: auto;
 
-      @media (max-width: $sm) {
+      @media (max-width: $md) {
         width: 300px;
      }
     }
@@ -496,7 +522,7 @@ button {
   &__wrapper {
     display: flex;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       flex-direction: column;
     }
   }
@@ -504,22 +530,31 @@ button {
   &__card {
     background-color: $white;
     flex: 0 0 32%;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @media (max-width: $lg) {
+      margin-bottom: 1rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
     @media (max-width: $sm) {
       margin-bottom: 1rem;
+      flex-direction: column;
     }
+
 
 
     &:not(:nth-child(3n+1)) {
         margin-left: calc((100% - (32% * 3)) / 2);
 
-        @media (max-width: $sm) {
+        @media (max-width: $lg) {
           margin-left: 0;
         }
       }
@@ -527,27 +562,63 @@ button {
     &__icon {
       padding: 2rem 0;
 
+       @media (max-width: $sm) {
+          flex: 0 0 30%;
+        }
+
       img {
         width: auto;
         height: 100px;
       }
     }
 
-    &__title {
-      margin-bottom: 1rem;
-    }
+
 
     &__text {
-      text-align: center;
-      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (max-width: $lg) {
+        flex-basis: 80%;
+        align-items: flex-start;
+      }
+
+      @media (max-width: $md) {
+        flex: 0 0 70%;
+        align-items: flex-start;
+      }
+
+      @media (max-width: $sm) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+
+      & > h1 {
+        margin-bottom: 1rem;
+      }
+
+      & > p {
+        text-align: justify;
+        margin-bottom: 2rem;
+
+      }
+
     }
 
     &__cta {
+      margin-top: auto;
       margin-bottom: 1rem;
 
-    //   @media (max-width: $sm) {
-    //   align-self: stretch;
-    // }
+      @media (max-width: $md) {
+        flex: 0 1 1;
+        margin: 0 auto;
+      }
+
+      @media (max-width: $lg) {
+        margin-left: auto;
+      }
     }
   }
 }
@@ -561,7 +632,7 @@ button {
     justify-content: center;
     align-items: center;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       flex-direction: column;
     }
   }
@@ -572,10 +643,11 @@ button {
     letter-spacing: 0.2rem;
     font-weight: normal;
 
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       margin-right: 0;
       letter-spacing: unset;
       margin-bottom: 1rem;
+      text-align: center;
     }
   }
 
@@ -608,6 +680,16 @@ button {
     left: 0%;
     top: 8rem;
     // transform: translateY(-50%);
+
+    @media (max-width: $md) {
+      display: none;
+    }
+
+    @media (max-width: $lg) {
+      width: 300px;
+      height: 400px;
+      top: 8.5rem;
+    }
   }
 
   &__title {
@@ -619,6 +701,7 @@ button {
     display: flex;
     align-items: center;
     position: relative;
+
   }
 
   &__item {
@@ -628,6 +711,10 @@ button {
     z-index: +1;
     width: 100%;
 
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
+
     &__thumbnail {
       flex-basis: 40%;
       position: relative;
@@ -635,11 +722,43 @@ button {
       align-items: center;
       padding: 2rem 0;
 
+      @media (max-width: $md) {
+        flex: 1 0 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      @media (max-width: $md) {
+        flex: 1 0 30%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
       img {
         width: 400px;
         height: 400px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media (max-width: $md) {
+          width: 400px;
+          height: 400px;
+        }
+
+        @media (max-width: $sm) {
+          width: 100%;
+          max-width: 400px;
+          height: auto;
+        }
+
+        @media (max-width: $lg) {
+          width: 100%;
+          height: auto;
+        }
+
+
       }
     }
 
@@ -652,6 +771,10 @@ button {
 
       &__heading {
         margin-bottom: 1rem;
+
+        @media (max-width: $md) {
+          text-align: center;
+        }
       }
 
       &__text {
@@ -698,13 +821,36 @@ button {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media (max-width: $sm) {
+      flex-wrap: nowrap;
+    }
+
+    @media (max-width: $sm) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__profile {
     flex-basis: 40%;
 
+    @media (max-width: $sm) {
+      text-align: center;
+    }
+
+    @media (max-width: $md) {
+      flex-basis: 50%;
+    }
+
+
+
     p {
       margin: 0;
+
+      @media (max-width: $sm) {
+        text-align: center;
+      }
     }
 
     p:last-of-type {
@@ -720,6 +866,10 @@ button {
         height: 50px;
         width: auto;
 
+        @media (max-width: $sm) {
+          height: 40px;
+        }
+
         &:not(:last-of-type) {
           margin-right: 1rem;
         }
@@ -730,9 +880,37 @@ button {
   &__nav {
     flex-grow: 1;
 
+    @media (max-width: $lg) {
+      flex: 0 0 40%;
+    }
+
+    @media (max-width: $md) {
+      flex: 0 0 40%;
+    }
+
+    @media (max-width: $sm) {
+      display: none;
+    }
+
     & > ul {
       display: flex;
       justify-content: space-between;
+
+      @media (max-width: $md) {
+        flex-direction: column;
+
+        & > li {
+          margin-bottom: 1rem;
+        }
+      }
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+
+        & > li {
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
 
@@ -783,6 +961,10 @@ button {
       display: flex;
       flex-wrap: wrap;
       z-index: +1;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
     }
 
     &__item {
@@ -794,29 +976,93 @@ button {
       margin-bottom: 2rem;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
+
       &:not(:nth-child(3n+1)) {
         margin-left: calc((100% - (32% * 3)) / 2);
+
+        @media (max-width: $lg) {
+          margin-left: 0;
+        }
+
       }
 
+      @media (max-width: $lg) {
+         flex-direction: row;
+         margin-bottom: 0;
+
+         &:nth-child(even) {
+           flex-direction: row-reverse;
+         }
+      }
+
+      @media (max-width: $sm) {
+        flex-direction: column;
+         margin-bottom: 2rem;
+
+        &:nth-child(even) {
+          flex-direction: column;
+        }
+      }
 
       &__thumbnail {
         width: 100%;
+
+        @media (max-width: $xl) {
+          height: 300px;
+        }
+
+        @media (max-width: $lg) {
+          width: unset;
+          flex: 0 0 50%;
+          height: 300px;
+        }
+
+        @media (max-width: $sm) {
+           width: 100%;
+           height: 200px;
+        }
 
         img {
           object-fit: cover;
           height: 400px;
           width: 100%;
+
+          @media (max-width: $xl) {
+            height: 300px;
+          }
+
+          @media (max-width: $lg) {
+            width: 100%;
+            height: 300px;
+          }
+
+          @media (max-width: $sm) {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
 
-      &__name {
-        color: $white;
-        padding: 1rem 0;
+      &__content {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__name {
+          color: $white;
+          padding: 1rem 0;
+        }
+
+        &__button {
+          margin-bottom: 2rem;
+        }
       }
 
-      &__button {
-        margin-bottom: 2rem;
-      }
+
+
+
     }
   }
 
@@ -827,6 +1073,10 @@ button {
       flex-direction: column;
       position: relative;
       height: 500px;
+
+      @media (max-width: $xl) {
+        height: 300px;
+      }
 
       img {
         height: 100%;
@@ -842,7 +1092,7 @@ button {
         background-image: linear-gradient(to bottom, rgba(255,0,0,0), $black);
       }
 
-      h1 {
+      & > h1 {
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -850,6 +1100,14 @@ button {
         color: $white;
         text-transform: uppercase;
         letter-spacing: .5rem;
+        text-align: center;
+
+        @media (max-width: $xl) {
+          position: relative;
+          padding-bottom: 2rem;
+          // bottom: 2rem;
+          // transform: translate(-50%, -150%);
+        }
       }
 
     }
@@ -885,6 +1143,10 @@ button {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         margin-bottom: 2rem;
 
+        @media (max-width: $xl) {
+          flex-direction: column;
+        }
+
         &__menu {
           // padding: 1rem;
           background-color: $lightBlue;
@@ -892,6 +1154,28 @@ button {
           // margin-right: 1rem;
           z-index: +1;
           // border-right: 1px solid $blue;
+
+          @media (max-width: $xl) {
+
+            & > ul {
+
+              display: flex;
+              justify-content: space-between;
+              // flex-wrap: wrap;
+
+              & > li {
+                flex: 1 1 33%;
+                display: flex;
+                justify-content: stretch;
+
+                a {
+                  flex: 1;
+                  text-align: center;
+                  padding: 1rem 0 !important;
+                }
+              }
+            }
+          }
 
           & > ul > li {
             // cursor: pointer;
@@ -929,6 +1213,7 @@ button {
 
         &__detail {
           padding: 1rem;
+          text-align: justify;
 
           & > div {
             height: 0;
@@ -964,9 +1249,18 @@ button {
     display: flex;
     // align-items: center;
 
+    @media (max-width: $lg) {
+      padding: 2rem 0;
+    }
+
+
     &__wrapper {
       display: flex;
       align-items: center;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
     }
 
     &__intro {
@@ -975,6 +1269,17 @@ button {
       flex-direction: column;
       padding-top: 5rem;
       padding-bottom: 2rem;
+
+      @media (max-width: $lg) {
+        order: 2;
+        align-items: center;
+        padding-top: 0;
+      }
+
+      @media (max-width: $xl) {
+        flex: 0 0 50%;
+      }
+
 
       &__heading {
         // font-weight: normal;
@@ -988,6 +1293,10 @@ button {
       &__cta {
         align-self: flex-end;
         // margin-top: 4rem;
+
+        @media (max-width: $lg) {
+          align-self: center;
+        }
       }
     }
 
@@ -998,6 +1307,18 @@ button {
       width: 450px;
       z-index: +1;
       align-self: center;
+
+
+      @media (max-width: $lg) {
+        order: 1;
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-bottom: 2rem;
+      }
+
+
 
       &::before {
         position: absolute;
@@ -1021,11 +1342,19 @@ button {
   }
 
    &__banner {
-    background-color: $lightGrey;
-    height: 500px;
-    position: relative;
-    background-position: center;
-    background-size: cover;
+     position: relative;
+     background-position: center;
+     background-size: cover;
+     height: 500px;
+     display: flex;
+     flex-direction: column;
+     flex: 1 0 1;
+     justify-content: flex-end;
+
+    @media (max-width: $xl) {
+      height: 300px;
+      // justify-content: center;
+    }
 
 
     &::before {
@@ -1038,14 +1367,19 @@ button {
     }
 
     & > h1 {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      -webkit-transform: translate(-50%, -100%);
-      transform: translate(-50%, -100%);
-      color: #fff;
+      // position: absolute;
+      // bottom: 0;
+      // left: 50%;
+      // transform: translate(-50%, -100%);
+      color: $white;
       text-transform: uppercase;
       letter-spacing: .5rem;
+      text-align: center;
+      z-index: +1;
+      padding-bottom: 2rem;
+
+
+
     }
   }
 }
@@ -1085,11 +1419,15 @@ button {
     // justify-content: flex-start;
     flex-wrap: wrap;
 
+    @media (max-width: $lg) {
+      flex-direction: column;
+    }
+
 
     &__item {
       // margin: 0 auto;
       flex: 0 0 32%;
-      border-radius: 20px;
+      // border-radius: 20px;
       overflow: hidden;
       background-color: $blue;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -1097,15 +1435,68 @@ button {
 
       &:not(:nth-child(3n+1)) {
         margin-left: calc((100% - (32% * 3)) / 2);
+
+         @media (max-width: $lg) {
+          margin-left: 0;
+        }
+
+      }
+
+      @media (max-width: $lg) {
+         flex-direction: row;
+
+         &:nth-child(even) {
+           flex-direction: row-reverse;
+         }
+      }
+
+      @media (max-width: $sm) {
+        flex-direction: column;
+         margin-bottom: 2rem;
+
+        &:nth-child(even) {
+          flex-direction: column;
+        }
       }
 
       &__thumbnail {
 
-        height: 300px;
-        overflow: hidden;
+        width: 100%;
+        // overflow: hidden;
+
+        @media (max-width: $xl) {
+          height: 300px;
+        }
+
+        @media (max-width: $lg) {
+          width: unset;
+          flex: 0 0 50%;
+          height: 300px;
+        }
+
+        @media (max-width: $sm) {
+           width: 100%;
+           height: 200px;
+        }
 
         & > img {
           object-fit: cover;
+          height: 300px;
+          width: 100%;
+
+          @media (max-width: $xl) {
+            height: 300px;
+          }
+
+          @media (max-width: $lg) {
+            width: 100%;
+            height: 300px;
+          }
+
+          @media (max-width: $sm) {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
 
@@ -1174,6 +1565,10 @@ button {
     &__wrapper {
       display: flex;
       align-items: flex-start;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+      }
     }
 
     &__thumbnail {
@@ -1183,6 +1578,22 @@ button {
       height: auto;
       flex: 0 0 450px;
       z-index: 10;
+
+      @media (max-width: $xl) {
+        width: 400px;
+      }
+
+      @media (max-width: $lg) {
+        position: relative;
+        // width: 50%;
+        flex: 0 0 100%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: $md) {
+        max-width: 400px;
+      }
 
       &::after  {
         position: absolute;
@@ -1194,6 +1605,10 @@ button {
         background-color: rgba($color: $blue, $alpha: 0.12);
         transform: translate(20px, 20px);
         z-index: -1;
+
+        @media (max-width: $lg) {
+          display: none;
+        }
       }
 
       & > img {
@@ -1205,6 +1620,10 @@ button {
     &__text {
       padding-left: 350px;
       // flex: 0 0 calc(100% - 450px - 2rem);
+
+       @media (max-width: $lg) {
+        padding: 0;
+      }
     }
   }
 
@@ -1214,12 +1633,23 @@ button {
     &__wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__thumbnail {
       flex: 0 0 350px;
       display: flex;
       justify-content: center;
+
+       @media (max-width: $lg) {
+        flex: 0 0 100%;
+        margin-bottom: 2rem;
+      }
 
       & > img {
         width: 200px;
@@ -1242,6 +1672,15 @@ button {
     display: flex;
     justify-content: space-evenly;
     // align-items: center;
+    @media (max-width: $xl) {
+      justify-content: space-between;
+
+    }
+
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
+
   }
 
   &__form {
@@ -1265,6 +1704,10 @@ button {
 
   &__company {
     flex: 0 0 40%;
+
+    @media (max-width: $md) {
+      text-align: center;
+    }
 
     & > p {
       margin-bottom: 2rem;
