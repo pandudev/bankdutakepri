@@ -1,169 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bank Duta Kepri</title>
+    <link rel="stylesheet" href="styles/css/main.min.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Bank Duta Kepri</title>
-  <link rel="stylesheet" href="styles/css/main.min.css" />
-</head>
-
-<body>
-
-  <header id="header" class="header">
-    <div class="header__wrapper container">
-      <div class="header__logo">
-        <a href="index.html">
-          <img src="sources/images/logo.png" alt="Bank Duta Kepri Logo" />
-        </a>
+  <body>
+    <header id="header" class="header">
+      <div class="header__wrapper container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="sources/images/logo.png" alt="Bank Duta Kepri Logo" />
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="nav nav--main">
+            <li><a href="#">Beranda</a></li>
+            <li class="nav--main__dropdown">
+              <a href="#">Produk</a>
+              <ul class="nav--main__dropdown__item">
+                <li><a href="#">Kredit</a></li>
+                <li><a href="#">Tabungan</a></li>
+                <li><a href="#">Deposito</a></li>
+              </ul>
+            </li>
+            <li class="active"><a href="#">Publikasi</a></li>
+            <li><a href="#">Lelang</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="header__nav">
-        <ul class="nav nav--main">
+    </header>
+
+    <div class="burger">
+      <div class="burger__bar"></div>
+      <div class="burger__bar"></div>
+      <div class="burger__bar"></div>
+    </div>
+
+    <div id="mobile" class="mobile">
+      <nav class="mobile__nav">
+        <ul class="nav nav--mobile">
           <li><a href="#">Beranda</a></li>
-          <li class="nav--main__dropdown">
-            <a href="#">Produk</a>
-            <ul class="nav--main__dropdown__item">
-              <li><a href="#">Kredit</a></li>
-              <li><a href="#">Tabungan</a></li>
-              <li><a href="#">Deposito</a></li>
-            </ul>
-          </li>
-          <li class="active"><a href="#">Publikasi</a></li>
+          <li><a href="#">Kredit</a></li>
+          <li><a href="#">Tabungan</a></li>
+          <li><a href="#">Deposito</a></li>
+          <li><a href="#">Publikasi</a></li>
           <li><a href="#">Lelang</a></li>
           <li><a href="#">Tentang Kami</a></li>
           <li><a href="#">Hubungi Kami</a></li>
         </ul>
       </nav>
     </div>
-  </header>
 
-  <div id="publikasi" class="publikasi">
-    <div class="page__banner publikasi__banner">
-      <h1>Laporan Publikasi</h1>
-    </div>
-    <div class="publikasi__content container">
-      <p>Informasi keuangan berikut telah disusun untuk memenuhi peraturan bank Indonesia No. 15/3/PBI/2013 tanggal 21
-        Mei 2013
-        tentang Transparasi Kondisi Keuangan bank Perkreditan Rakyat dan Surat Edaran Bank Indonesia No. 15/29/DKBU
-        tanggal 31
-        Juli 2013 perihal Laporan tahunan dan Laporan Keuangan Publikasi BPR.</p>
-      <p>Rasio-rasio perkembangan usaha PT BPR Sinar Mitra Sejahtera selama 3 (tri) wulan terakhir berdasarkan Laporan
-        Hasil
-        Pemeriksaan Bank Indonesia adalah sebagai berikut:</p>
-
-      <div class="table__responsive">
-        <table class="table">
-          <thead>
-            <th>Periode</th>
-            <th>Asset (juta)</th>
-            <th>Kredit (juta)</th>
-            <th>DPK (juta)</th>
-            <th>Laba (juta)</th>
-            <th>Aksi</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Desember 2013</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td><a href="#" class="link">Unduh</a></td>
-            </tr>
-            <tr>
-              <td>Desember 2013</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td><a href="#" class="link">Unduh</a></td>
-            </tr>
-            <tr>
-              <td>Desember 2013</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td><a href="#" class="link">Unduh</a></td>
-            </tr>
-            <tr>
-              <td>Desember 2013</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td><a href="#" class="link">Unduh</a></td>
-            </tr>
-            <tr>
-              <td>Desember 2013</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td>1.958.401</td>
-              <td>1.367.573</td>
-              <td><a href="#" class="link">Unduh</a></td>
-            </tr>
-          </tbody>
-        </table>
+    <div id="publikasi" class="publikasi">
+      <div class="page__banner publikasi__banner">
+        <h1>Laporan Publikasi</h1>
       </div>
-    </div>
-  </div>
+      <div class="publikasi__content container">
+        <p>
+          Informasi keuangan berikut telah disusun untuk memenuhi peraturan bank
+          Indonesia No. 15/3/PBI/2013 tanggal 21 Mei 2013 tentang Transparasi
+          Kondisi Keuangan bank Perkreditan Rakyat dan Surat Edaran Bank
+          Indonesia No. 15/29/DKBU tanggal 31 Juli 2013 perihal Laporan tahunan
+          dan Laporan Keuangan Publikasi BPR.
+        </p>
+        <p>
+          Rasio-rasio perkembangan usaha PT BPR Sinar Mitra Sejahtera selama 3
+          (tri) wulan terakhir berdasarkan Laporan Hasil Pemeriksaan Bank
+          Indonesia adalah sebagai berikut:
+        </p>
 
-  <footer id=" footer" class="footer">
-    <div class="footer__wrapper container">
-      <div class="footer__profile">
-        <h4>BPR DUTA KEPRI</h4>
-        <p>Jl. Kemboja No. 21</p>
-        <p>Tanjungpinang, Kepulauan Riau</p>
-        <p>Telp: 0771-316888 (Hunting)</p>
-        <p>Fax: 0771-316800</p>
-        <a href="mailto:bprdutakepri@yahoo.co.id">Email: bptdutakepri@yahoo.co.id</a>
-        <p>Terdaftar dan diawasi oleh :</p>
-        <div class="footer__profile__supervisor">
-          <img src="sources/images/ojk-logo.png" alt="OJK" />
-          <img src="sources/images/lps-logo.png" alt="LPS" />
+        <div class="table__responsive">
+          <table class="table">
+            <thead>
+              <th>Periode</th>
+              <th>Asset (juta)</th>
+              <th>Kredit (juta)</th>
+              <th>DPK (juta)</th>
+              <th>Laba (juta)</th>
+              <th>Aksi</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desember 2013</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td><a href="#" class="link">Unduh</a></td>
+              </tr>
+              <tr>
+                <td>Desember 2013</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td><a href="#" class="link">Unduh</a></td>
+              </tr>
+              <tr>
+                <td>Desember 2013</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td><a href="#" class="link">Unduh</a></td>
+              </tr>
+              <tr>
+                <td>Desember 2013</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td><a href="#" class="link">Unduh</a></td>
+              </tr>
+              <tr>
+                <td>Desember 2013</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td>1.958.401</td>
+                <td>1.367.573</td>
+                <td><a href="#" class="link">Unduh</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <div class="footer__nav">
-        <ul class="nav nav--footer">
-          <li>
-            <h4>Tabungan</h4>
-            <ul>
-              <li>
-                <a href="">Tabungan Duta Prima</a>
-              </li>
-              <li>
-                <a href="">TabunganKu</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h4>Deposito</h4>
-            <ul>
-              <li>
-                <a href="#">Deposio Kharisma</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h4>Kredit</h4>
-            <ul>
-              <li><a href="#">Kredit Multi Guna</a></li>
-              <li><a href="#">Kredit Kendaraan Bermotor</a></li>
-              <li><a href="#">Kredit Pemilikan Rumah</a></li>
-              <li><a href="#">Kredit Investasi</a></li>
-              <li><a href="#">Kredit Modal Kerja</a></li>
-              <li><a href="#">Kredit Pegawai</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__copyright">
-        <p>Copyright 2019 &copy; BPR Duta Kepri</p>
-      </div>
     </div>
-  </footer>
 
-</body>
+    <footer id=" footer" class="footer">
+      <div class="footer__wrapper container">
+        <div class="footer__profile">
+          <h4>BPR DUTA KEPRI</h4>
+          <p>Jl. Kemboja No. 21</p>
+          <p>Tanjungpinang, Kepulauan Riau</p>
+          <p>Telp: 0771-316888 (Hunting)</p>
+          <p>Fax: 0771-316800</p>
+          <a href="mailto:bprdutakepri@yahoo.co.id"
+            >Email: bptdutakepri@yahoo.co.id</a
+          >
+          <p>Terdaftar dan diawasi oleh :</p>
+          <div class="footer__profile__supervisor">
+            <img src="sources/images/ojk-logo.png" alt="OJK" />
+            <img src="sources/images/lps-logo.png" alt="LPS" />
+          </div>
+        </div>
+        <div class="footer__nav">
+          <ul class="nav nav--footer">
+            <li>
+              <h4>Tabungan</h4>
+              <ul>
+                <li>
+                  <a href="">Tabungan Duta Prima</a>
+                </li>
+                <li>
+                  <a href="">TabunganKu</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Deposito</h4>
+              <ul>
+                <li>
+                  <a href="#">Deposio Kharisma</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Kredit</h4>
+              <ul>
+                <li><a href="#">Kredit Multi Guna</a></li>
+                <li><a href="#">Kredit Kendaraan Bermotor</a></li>
+                <li><a href="#">Kredit Pemilikan Rumah</a></li>
+                <li><a href="#">Kredit Investasi</a></li>
+                <li><a href="#">Kredit Modal Kerja</a></li>
+                <li><a href="#">Kredit Pegawai</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p>Copyright 2019 &copy; BPR Duta Kepri</p>
+        </div>
+      </div>
+    </footer>
 
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

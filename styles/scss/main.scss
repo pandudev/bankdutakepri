@@ -5,11 +5,11 @@ $white: #ffffff;
 $black: #000000;
 $grey: #404040;
 // $lightGrey: #f9f9f9;
-$lightGrey: #E1EEF9;
+$lightGrey: #e1eef9;
 
 // breakpoints
-$sm:576px;
-$md:768px;
+$sm: 576px;
+$md: 768px;
 $lg: 992px;
 $xl: 1200px;
 
@@ -27,6 +27,10 @@ body {
   @media (max-width: $sm) {
     font-size: 14px;
   }
+}
+
+body {
+  position: relative;
 }
 
 * {
@@ -80,14 +84,12 @@ p {
     color: $white;
 
     th {
-      padding: .75rem 0;
+      padding: 0.75rem 0;
     }
   }
 
   tbody {
-
     tr {
-
       &:hover {
         background-color: $lightBlue;
         color: $white;
@@ -98,9 +100,8 @@ p {
       }
 
       td {
-        padding: .75rem 0;
+        padding: 0.75rem 0;
         text-align: center;
-
       }
     }
   }
@@ -110,14 +111,13 @@ p {
   width: 100%;
   padding: 1rem;
 
-
   &__group {
     display: flex;
     flex-direction: column;
     // align-items: flex-start;
 
     &:not(:last-of-type) {
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
     }
 
     & > label {
@@ -144,8 +144,9 @@ p {
   }
 }
 
-input, textarea {
-  padding: .5rem;
+input,
+textarea {
+  padding: 0.5rem;
 }
 
 button {
@@ -157,18 +158,31 @@ button {
   overflow: visible;
   outline: none;
   background: transparent;
-
 }
-
 
 // global
 .container {
   width: 80%;
   margin: 0 auto;
 
-   @media (max-width: $sm) {
-      width: 85%;
-    }
+  @media (max-width: $sm) {
+    width: 85%;
+  }
+}
+
+// animation
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 // component
@@ -249,13 +263,12 @@ button {
     &:hover {
       background-color: $blue;
     }
-
   }
 
   &--cta {
     display: flex;
 
-     &__icon {
+    &__icon {
       margin-right: 1rem;
       display: flex;
       align-items: center;
@@ -376,12 +389,32 @@ button {
     @media (max-width: $md) {
       display: none;
     }
-
-
-
-
   }
 
+  &--mobile {
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    & > li {
+      display: flex;
+      flex-grow: 1;
+      // align-items: center;
+      width: 100%;
+      justify-content: center;
+
+      & > a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // font-weight: bold;
+        font-size: 1.5rem;
+        color: $white;
+      }
+    }
+  }
 }
 
 // layout
@@ -401,10 +434,9 @@ button {
     align-items: center;
 
     @media (max-width: $lg) {
-     flex-direction: column;
-     align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
   }
 
   &__logo {
@@ -424,12 +456,99 @@ button {
       width: 250px;
       height: auto;
     }
-
   }
 
   &__nav {
     flex-grow: 1;
     text-align: center;
+  }
+}
+
+.burger {
+  display: none;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background-color: $blue;
+  border-radius: 50%;
+
+  align-items: center;
+  z-index: 100;
+
+  @media (max-width: $md) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &.show {
+    background-color: unset;
+  }
+
+  &.show > div {
+    animation: fadeIn;
+    animation-duration: 1s;
+
+    &:nth-child(1) {
+      transform: translateY(3px) rotate(-45deg);
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-3px) rotate(45deg);
+    }
+  }
+
+  &__bar {
+    width: 36px;
+    height: 6px;
+    background-color: $white;
+
+    &:nth-child(2) {
+      margin: 5px 0;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  background-color: $blue;
+  z-index: 99;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+
+  @media (max-width: $md) {
+    display: block;
+  }
+
+  &.show {
+    height: 100vh;
+  }
+
+  &__nav {
+    padding-top: 40px;
+    opacity: 0;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+
+    &.show {
+      opacity: 1;
+      transition: all 1s ease-in-out;
+    }
   }
 }
 
@@ -439,9 +558,9 @@ button {
   align-items: center;
 
   @media (max-width: $md) {
-      align-items: stretch;
-      height: 100%;
-      padding: 2rem 0;
+    align-items: stretch;
+    height: 100%;
+    padding: 2rem 0;
   }
 
   &__wrapper {
@@ -470,8 +589,8 @@ button {
       font-weight: normal;
       margin-bottom: 2rem;
 
-       @media (max-width: $md) {
-         text-align: center;
+      @media (max-width: $md) {
+        text-align: center;
       }
 
       span {
@@ -491,8 +610,6 @@ button {
       // @media (max-width: $sm) {
       //   align-self: stretch;
       // }
-
-
     }
   }
 
@@ -510,7 +627,7 @@ button {
 
       @media (max-width: $md) {
         width: 300px;
-     }
+      }
     }
   }
 }
@@ -557,30 +674,26 @@ button {
       flex-direction: column;
     }
 
+    &:not(:nth-child(3n + 1)) {
+      margin-left: calc((100% - (32% * 3)) / 2);
 
-
-    &:not(:nth-child(3n+1)) {
-        margin-left: calc((100% - (32% * 3)) / 2);
-
-        @media (max-width: $lg) {
-          margin-left: 0;
-        }
+      @media (max-width: $lg) {
+        margin-left: 0;
       }
+    }
 
     &__icon {
       padding: 2rem 0;
 
-       @media (max-width: $sm) {
-          flex: 0 0 30%;
-        }
+      @media (max-width: $sm) {
+        flex: 0 0 30%;
+      }
 
       img {
         width: auto;
         height: 100px;
       }
     }
-
-
 
     &__text {
       display: flex;
@@ -602,7 +715,6 @@ button {
         align-items: center;
       }
 
-
       & > h1 {
         margin-bottom: 1rem;
       }
@@ -610,9 +722,7 @@ button {
       & > p {
         text-align: justify;
         margin-bottom: 2rem;
-
       }
-
     }
 
     &__cta {
@@ -663,8 +773,6 @@ button {
     display: flex;
     align-items: center;
 
-
-
     h3 {
       // color: $blue;
       font-weight: normal;
@@ -709,7 +817,6 @@ button {
     display: flex;
     align-items: center;
     position: relative;
-
   }
 
   &__item {
@@ -730,15 +837,15 @@ button {
       align-items: center;
       padding: 2rem 0;
 
-      @media (max-width: $md) {
-        flex: 1 0 100%;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-      }
+      // @media (max-width: $lg) {
+      //   flex: 1 0 30%;
+      //   padding: 0;
+      //   display: flex;
+      //   justify-content: center;
+      // }
 
       @media (max-width: $md) {
-        flex: 1 0 30%;
+        flex: 1 0 100%;
         padding: 0;
         display: flex;
         justify-content: center;
@@ -763,10 +870,9 @@ button {
 
         @media (max-width: $lg) {
           width: 100%;
+          max-width: 400px;
           height: auto;
         }
-
-
       }
     }
 
@@ -851,8 +957,6 @@ button {
       flex-basis: 50%;
     }
 
-
-
     p {
       margin: 0;
 
@@ -936,8 +1040,6 @@ button {
 
 // pages
 .product {
-
-
   &-menu {
     padding: 2rem 0;
     display: flex;
@@ -946,14 +1048,14 @@ button {
     position: relative;
 
     &::before {
-        position: absolute;
-        content: '';
-        top: 50%;
-        transform: translateY(-38%);
-        width: 100%;
-        height: 500px;
-        background-color: rgba($color: $blue, $alpha: 0.12)
-      }
+      position: absolute;
+      content: "";
+      top: 50%;
+      transform: translateY(-38%);
+      width: 100%;
+      height: 500px;
+      background-color: rgba($color: $blue, $alpha: 0.12);
+    }
 
     & > h1 {
       font-weight: normal;
@@ -982,30 +1084,29 @@ button {
       flex-direction: column;
       align-items: center;
       margin-bottom: 2rem;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-
-      &:not(:nth-child(3n+1)) {
+      &:not(:nth-child(3n + 1)) {
         margin-left: calc((100% - (32% * 3)) / 2);
 
         @media (max-width: $lg) {
           margin-left: 0;
         }
-
       }
 
       @media (max-width: $lg) {
-         flex-direction: row;
-         margin-bottom: 0;
+        flex-direction: row;
+        margin-bottom: 0;
 
-         &:nth-child(even) {
-           flex-direction: row-reverse;
-         }
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
       }
 
       @media (max-width: $sm) {
         flex-direction: column;
-         margin-bottom: 2rem;
+        margin-bottom: 2rem;
 
         &:nth-child(even) {
           flex-direction: column;
@@ -1026,8 +1127,8 @@ button {
         }
 
         @media (max-width: $sm) {
-           width: 100%;
-           height: 200px;
+          width: 100%;
+          height: 200px;
         }
 
         img {
@@ -1067,15 +1168,10 @@ button {
           margin-bottom: 2rem;
         }
       }
-
-
-
-
     }
   }
 
   &-detail {
-
     &-banner {
       display: flex;
       flex-direction: column;
@@ -1094,10 +1190,14 @@ button {
 
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to bottom, rgba(255,0,0,0), $black);
+        background-image: linear-gradient(
+          to bottom,
+          rgba(255, 0, 0, 0),
+          $black
+        );
       }
 
       & > h1 {
@@ -1107,7 +1207,7 @@ button {
         transform: translate(-50%, -100%);
         color: $white;
         text-transform: uppercase;
-        letter-spacing: .5rem;
+        letter-spacing: 0.5rem;
         text-align: center;
 
         @media (max-width: $xl) {
@@ -1117,7 +1217,6 @@ button {
           // transform: translate(-50%, -150%);
         }
       }
-
     }
 
     &-content {
@@ -1142,13 +1241,13 @@ button {
         & > a {
           margin-top: auto;
         }
-
       }
 
       &__information {
         // padding: 1rem;
         display: flex;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin-bottom: 2rem;
 
         @media (max-width: $xl) {
@@ -1160,13 +1259,10 @@ button {
           background-color: $lightBlue;
           flex-basis: 20%;
           // margin-right: 1rem;
-          z-index: +1;
           // border-right: 1px solid $blue;
 
           @media (max-width: $xl) {
-
             & > ul {
-
               display: flex;
               justify-content: space-between;
               // flex-wrap: wrap;
@@ -1196,16 +1292,15 @@ button {
               color: $white;
             }
 
-
             &.active {
               background-color: $blue;
 
               &:hover {
-                 background-color: $blue;
+                background-color: $blue;
 
-                 & > a {
-                    color: $white;
-                  }
+                & > a {
+                  color: $white;
+                }
               }
             }
 
@@ -1227,7 +1322,7 @@ button {
             height: 0;
             opacity: 0;
             visibility: hidden;
-            transition: opacity .5s ease-in-out;
+            transition: opacity 0.5s ease-in-out;
 
             &.show {
               opacity: 1;
@@ -1259,8 +1354,8 @@ button {
 
     @media (max-width: $lg) {
       padding: 2rem 0;
+      height: 100%;
     }
-
 
     &__wrapper {
       display: flex;
@@ -1287,7 +1382,6 @@ button {
       @media (max-width: $xl) {
         flex: 0 0 50%;
       }
-
 
       &__heading {
         // font-weight: normal;
@@ -1316,7 +1410,6 @@ button {
       z-index: +1;
       align-self: center;
 
-
       @media (max-width: $lg) {
         order: 1;
         position: relative;
@@ -1325,8 +1418,6 @@ button {
         max-width: 400px;
         margin-bottom: 2rem;
       }
-
-
 
       &::before {
         position: absolute;
@@ -1349,29 +1440,34 @@ button {
     }
   }
 
-   &__banner {
-     position: relative;
-     background-position: center;
-     background-size: cover;
-     height: 500px;
-     display: flex;
-     flex-direction: column;
-     flex: 1 0 1;
-     justify-content: flex-end;
+  &__banner {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 1;
+    justify-content: flex-end;
 
     @media (max-width: $xl) {
       height: 300px;
       // justify-content: center;
     }
 
-
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       width: 100%;
       height: 100%;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,0,0,0)), to(#000));
-      background-image: linear-gradient(to bottom, rgba(255,0,0,0), #000);
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(255, 0, 0, 0)),
+        to(#000)
+      );
+      background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #000);
     }
 
     & > h1 {
@@ -1381,38 +1477,33 @@ button {
       // transform: translate(-50%, -100%);
       color: $white;
       text-transform: uppercase;
-      letter-spacing: .5rem;
+      letter-spacing: 0.5rem;
       text-align: center;
       z-index: +1;
       padding-bottom: 2rem;
-
-
-
     }
   }
 }
 
 .publikasi {
-
   &__banner {
     background-image: url("/sources/images/publikasi-banner.png");
   }
 
   &__content {
-      padding: 2rem 0;
+    padding: 2rem 0;
 
-      & > h2 {
-        margin-bottom: 2rem;
-      }
-
-      & > .table {
-        margin-top: 2rem;
-      }
+    & > h2 {
+      margin-bottom: 2rem;
     }
+
+    & > .table {
+      margin-top: 2rem;
+    }
+  }
 }
 
 .lelang {
-
   background-color: $lightGrey;
   display: flex;
   flex-direction: column;
@@ -1431,36 +1522,35 @@ button {
       flex-direction: column;
     }
 
-
     &__item {
       // margin: 0 auto;
       flex: 0 0 32%;
       // border-radius: 20px;
       overflow: hidden;
       background-color: $blue;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
       margin-bottom: 2rem;
 
-      &:not(:nth-child(3n+1)) {
+      &:not(:nth-child(3n + 1)) {
         margin-left: calc((100% - (32% * 3)) / 2);
 
-         @media (max-width: $lg) {
+        @media (max-width: $lg) {
           margin-left: 0;
         }
-
       }
 
       @media (max-width: $lg) {
-         flex-direction: row;
+        flex-direction: row;
 
-         &:nth-child(even) {
-           flex-direction: row-reverse;
-         }
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+        }
       }
 
       @media (max-width: $sm) {
         flex-direction: column;
-         margin-bottom: 2rem;
+        margin-bottom: 2rem;
 
         &:nth-child(even) {
           flex-direction: column;
@@ -1468,7 +1558,6 @@ button {
       }
 
       &__thumbnail {
-
         width: 100%;
         // overflow: hidden;
 
@@ -1483,8 +1572,8 @@ button {
         }
 
         @media (max-width: $sm) {
-           width: 100%;
-           height: 200px;
+          width: 100%;
+          height: 200px;
         }
 
         & > img {
@@ -1509,7 +1598,6 @@ button {
       }
 
       &__content {
-
         h4 {
           padding: 1rem;
           color: $white;
@@ -1532,8 +1620,8 @@ button {
                 flex-grow: 1;
 
                 &::before {
-                  content: ':';
-                  margin-right: .75rem;
+                  content: ":";
+                  margin-right: 0.75rem;
                 }
               }
             }
@@ -1547,7 +1635,6 @@ button {
     align-self: center;
     margin-bottom: 2rem;
   }
-
 }
 
 .about {
@@ -1600,10 +1687,11 @@ button {
       }
 
       @media (max-width: $md) {
-        max-width: 400px;
+        width: 100%;
+        max-width: 300px;
       }
 
-      &::after  {
+      &::after {
         position: absolute;
         content: "";
         width: 100%;
@@ -1629,7 +1717,7 @@ button {
       padding-left: 350px;
       // flex: 0 0 calc(100% - 450px - 2rem);
 
-       @media (max-width: $lg) {
+      @media (max-width: $lg) {
         padding: 0;
       }
     }
@@ -1654,7 +1742,7 @@ button {
       display: flex;
       justify-content: center;
 
-       @media (max-width: $lg) {
+      @media (max-width: $lg) {
         flex: 0 0 100%;
         margin-bottom: 2rem;
       }
@@ -1682,13 +1770,11 @@ button {
     // align-items: center;
     @media (max-width: $xl) {
       justify-content: space-between;
-
     }
 
     @media (max-width: $md) {
       flex-direction: column;
     }
-
   }
 
   &__form {
@@ -1700,14 +1786,13 @@ button {
     color: $black;
     // height: 600px;
     padding: 1rem;
-    border-radius: 40px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    // border-radius: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     & > p {
       font-style: italic;
       margin-bottom: 1rem;
     }
-
   }
 
   &__company {
@@ -1732,11 +1817,10 @@ button {
         height: auto;
       }
 
-      & > a{
+      & > a {
         display: flex;
         align-items: center;
       }
     }
-
   }
 }

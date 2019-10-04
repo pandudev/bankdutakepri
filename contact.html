@@ -1,173 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bank Duta Kepri</title>
+    <link rel="stylesheet" href="styles/css/main.min.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Bank Duta Kepri</title>
-  <link rel="stylesheet" href="styles/css/main.min.css" />
-</head>
-
-<body>
-
-  <header id="header" class="header">
-    <div class="header__wrapper container">
-      <div class="header__logo">
-        <a href="index.html">
-          <img src="sources/images/logo.png" alt="Bank Duta Kepri Logo" />
-        </a>
+  <body>
+    <header id="header" class="header">
+      <div class="header__wrapper container">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="sources/images/logo.png" alt="Bank Duta Kepri Logo" />
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="nav nav--main">
+            <li><a href="#">Beranda</a></li>
+            <li class="nav--main__dropdown">
+              <a href="#">Produk</a>
+              <ul class="nav--main__dropdown__item">
+                <li><a href="#">Kredit</a></li>
+                <li><a href="#">Tabungan</a></li>
+                <li><a href="#">Deposito</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Publikasi</a></li>
+            <li><a href="#">Lelang</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li class="active"><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav class="header__nav">
-        <ul class="nav nav--main">
+    </header>
+
+    <div class="burger">
+      <div class="burger__bar"></div>
+      <div class="burger__bar"></div>
+      <div class="burger__bar"></div>
+    </div>
+
+    <div id="mobile" class="mobile">
+      <nav class="mobile__nav">
+        <ul class="nav nav--mobile">
           <li><a href="#">Beranda</a></li>
-          <li class="nav--main__dropdown">
-            <a href="#">Produk</a>
-            <ul class="nav--main__dropdown__item">
-              <li><a href="#">Kredit</a></li>
-              <li><a href="#">Tabungan</a></li>
-              <li><a href="#">Deposito</a></li>
-            </ul>
-          </li>
+          <li><a href="#">Kredit</a></li>
+          <li><a href="#">Tabungan</a></li>
+          <li><a href="#">Deposito</a></li>
           <li><a href="#">Publikasi</a></li>
           <li><a href="#">Lelang</a></li>
           <li><a href="#">Tentang Kami</a></li>
-          <li class="active"><a href="#">Hubungi Kami</a></li>
+          <li><a href="#">Hubungi Kami</a></li>
         </ul>
       </nav>
     </div>
-  </header>
 
-  <div class="contact">
-    <div class="contact__wrapper container">
-      <div class="contact__company">
-        <h2>BPR DUTA KEPRI</h2>
-        <p>Silahkan isi form kontak untuk mengirim pesan berupa pertanyaan, kritik, saran, pengaduan, atau pengajuan.
-          Setelah itu staf kami akan menghubungi anda melalui nomor telpon yang anda input. Anda juga bisa menghubungi
-          kami melalui kontak di bawah :</p>
-        <div>
-          <img src="sources/images/location-icon.png" alt="Location">
-          <p>Jl. Kamboja No. 21 Tanjungpinang 29112,
-            Kepulauan Riau
+    <div class="contact">
+      <div class="contact__wrapper container">
+        <div class="contact__company">
+          <h2>BPR DUTA KEPRI</h2>
+          <p>
+            Silahkan isi form kontak untuk mengirim pesan berupa pertanyaan,
+            kritik, saran, pengaduan, atau pengajuan. Setelah itu staf kami akan
+            menghubungi anda melalui nomor telpon yang anda input. Anda juga
+            bisa menghubungi kami melalui kontak di bawah :
           </p>
-        </div>
-        <div>
-          <img src="sources/images/phone-icon-white.png" alt="phone">
-          <p>0771-316888 (Hunting)
-          </p>
-        </div>
-        <div>
-          <img src="sources/images/fax-icon.png" alt="fax">
-          <p>0771-316800
-          </p>
-        </div>
-        <div>
-          <a href="mailto:bprdutakepri@yahoo.co.id">
-            <img src="sources/images/email-icon.png" alt="email">
-            <p>bprdutakepri@yahoo.co.id
-            </p>
-          </a>
-        </div>
-        <div>
-          <a href="https://www.instagram.com/bankdutakepri/" target="_blank">
-            <img src="sources/images/instagram-icon.png" alt="instagram">
-            <p>bankdutakepri
-            </p>
-          </a>
-        </div>
-        <div>
-          <a href="https://www.facebook.com/bprdutakepri/" target="_blank">
-            <img src="sources/images/facebook-icon.png" alt="facebook">
-            <p>bprdutakepri
-            </p>
-          </a>
-        </div>
-      </div>
-      <div class="contact__form">
-        <h3>FORM KONTAK</h3>
-        <!-- <p>Silahkan isi semua data, kemudian klik kirim pesan </p> -->
-        <form action="#" class="form">
-          <div class="form__group">
-            <label for="namaLengkap">Nama Lengkap</label>
-            <input type="text" id="namaLengkap">
+          <div>
+            <img src="sources/images/location-icon.png" alt="Location" />
+            <p>Jl. Kamboja No. 21 Tanjungpinang 29112, Kepulauan Riau</p>
           </div>
-          <div class="form__group">
-            <label for="email">Email</label>
-            <input type="email" id="email">
+          <div>
+            <img src="sources/images/phone-icon-white.png" alt="phone" />
+            <p>0771-316888 (Hunting)</p>
           </div>
-          <div class="form__group">
-            <label for="notelp">No Telp</label>
-            <input type="text" id="notelp">
+          <div>
+            <img src="sources/images/fax-icon.png" alt="fax" />
+            <p>0771-316800</p>
           </div>
-          <div class="form__group">
-            <label for="peasn">Pesan</label>
-            <textarea name="pesan" id="pesan" cols="30" rows="10"></textarea>
+          <div>
+            <a href="mailto:bprdutakepri@yahoo.co.id">
+              <img src="sources/images/email-icon.png" alt="email" />
+              <p>bprdutakepri@yahoo.co.id</p>
+            </a>
           </div>
-          <div class="form__group">
-            <button class="btn btn--primary">Kirim Pesan</button>
+          <div>
+            <a href="https://www.instagram.com/bankdutakepri/" target="_blank">
+              <img src="sources/images/instagram-icon.png" alt="instagram" />
+              <p>bankdutakepri</p>
+            </a>
           </div>
-        </form>
+          <div>
+            <a href="https://www.facebook.com/bprdutakepri/" target="_blank">
+              <img src="sources/images/facebook-icon.png" alt="facebook" />
+              <p>bprdutakepri</p>
+            </a>
+          </div>
+        </div>
+        <div class="contact__form">
+          <h3>FORM KONTAK</h3>
+          <!-- <p>Silahkan isi semua data, kemudian klik kirim pesan </p> -->
+          <form action="#" class="form">
+            <div class="form__group">
+              <label for="namaLengkap">Nama Lengkap</label>
+              <input type="text" id="namaLengkap" />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input type="email" id="email" />
+            </div>
+            <div class="form__group">
+              <label for="notelp">No Telp</label>
+              <input type="text" id="notelp" />
+            </div>
+            <div class="form__group">
+              <label for="peasn">Pesan</label>
+              <textarea name="pesan" id="pesan" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form__group">
+              <button class="btn btn--primary">Kirim Pesan</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <footer id="footer" class="footer">
-    <div class="footer__wrapper container">
-      <div class="footer__profile">
-        <h4>BPR DUTA KEPRI</h4>
-        <p>Jl. Kemboja No. 21</p>
-        <p>Tanjungpinang, Kepulauan Riau</p>
-        <p>Telp: 0771-316888 (Hunting)</p>
-        <p>Fax: 0771-316800</p>
-        <a href="mailto:bprdutakepri@yahoo.co.id">Email: bptdutakepri@yahoo.co.id</a>
-        <p>Terdaftar dan diawasi oleh :</p>
-        <div class="footer__profile__supervisor">
-          <img src="sources/images/ojk-logo.png" alt="OJK" />
-          <img src="sources/images/lps-logo.png" alt="LPS" />
+    <footer id="footer" class="footer">
+      <div class="footer__wrapper container">
+        <div class="footer__profile">
+          <h4>BPR DUTA KEPRI</h4>
+          <p>Jl. Kemboja No. 21</p>
+          <p>Tanjungpinang, Kepulauan Riau</p>
+          <p>Telp: 0771-316888 (Hunting)</p>
+          <p>Fax: 0771-316800</p>
+          <a href="mailto:bprdutakepri@yahoo.co.id"
+            >Email: bptdutakepri@yahoo.co.id</a
+          >
+          <p>Terdaftar dan diawasi oleh :</p>
+          <div class="footer__profile__supervisor">
+            <img src="sources/images/ojk-logo.png" alt="OJK" />
+            <img src="sources/images/lps-logo.png" alt="LPS" />
+          </div>
+        </div>
+        <div class="footer__nav">
+          <ul class="nav nav--footer">
+            <li>
+              <h4>Tabungan</h4>
+              <ul>
+                <li>
+                  <a href="">Tabungan Duta Prima</a>
+                </li>
+                <li>
+                  <a href="">TabunganKu</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Deposito</h4>
+              <ul>
+                <li>
+                  <a href="#">Deposio Kharisma</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h4>Kredit</h4>
+              <ul>
+                <li><a href="#">Kredit Multi Guna</a></li>
+                <li><a href="#">Kredit Kendaraan Bermotor</a></li>
+                <li><a href="#">Kredit Pemilikan Rumah</a></li>
+                <li><a href="#">Kredit Investasi</a></li>
+                <li><a href="#">Kredit Modal Kerja</a></li>
+                <li><a href="#">Kredit Pegawai</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__copyright">
+          <p>Copyright 2019 &copy; BPR Duta Kepri</p>
         </div>
       </div>
-      <div class="footer__nav">
-        <ul class="nav nav--footer">
-          <li>
-            <h4>Tabungan</h4>
-            <ul>
-              <li>
-                <a href="">Tabungan Duta Prima</a>
-              </li>
-              <li>
-                <a href="">TabunganKu</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h4>Deposito</h4>
-            <ul>
-              <li>
-                <a href="#">Deposio Kharisma</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h4>Kredit</h4>
-            <ul>
-              <li><a href="#">Kredit Multi Guna</a></li>
-              <li><a href="#">Kredit Kendaraan Bermotor</a></li>
-              <li><a href="#">Kredit Pemilikan Rumah</a></li>
-              <li><a href="#">Kredit Investasi</a></li>
-              <li><a href="#">Kredit Modal Kerja</a></li>
-              <li><a href="#">Kredit Pegawai</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="footer__copyright">
-        <p>Copyright 2019 &copy; BPR Duta Kepri</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="scripts/jquery.js"></script>
-  <script src="scripts/main.js"></script>
-</body>
-
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
