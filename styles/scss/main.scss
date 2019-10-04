@@ -127,6 +127,14 @@ p {
     & > input,
     & > textarea {
       flex-grow: 1;
+      border: none;
+      border-bottom: 1px solid $black;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+        border-color: $blue;
+      }
     }
 
     & > button {

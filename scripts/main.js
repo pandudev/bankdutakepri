@@ -5,5 +5,10 @@ $(document).ready(function () {
     $(this).parent().siblings().removeClass('active');
     $($(this).data('target')).addClass('show');
     $($(this).data('target')).siblings().removeClass('show');
+  });
+
+  $('#namaLengkap').focus(function () {
+    console.log($(this).prev());
+    $(this).prev().css({ "color": "#0673ce" });
   })
 });
